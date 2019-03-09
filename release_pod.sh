@@ -12,4 +12,4 @@ request_body=$(echo "{'tag_name': 'v${pod_version}',
                       'body': 'Release of version ${pod_version}',
                       'draft': false,
                       'prerelease': false}" | sed "s/'/\"/g")
-curl --data $request_body https://api.github.com/repos/${repo_owner}/${repo_name}/releases?access_token=${repo_token}
+curl --data "$request_body" https://api.github.com/repos/${repo_owner}/${repo_name}/releases?access_token=${repo_token}
